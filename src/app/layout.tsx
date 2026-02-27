@@ -18,8 +18,9 @@ const mono = Cascadia_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://zaymoriel.com"),
-  title: { default: "Raymoriel Vandrell", template: "%s • Raymoriel Vandrell" },
-  description: "...",
+  title: { default: "Zaymoriel Vandrell", template: "%s • Zaymoriel Vandrell" },
+  description:
+    "Essays on software architecture, production systems, performance, and the discipline of building durable software that survives real-world constraints.",
   robots: { index: true, follow: true },
   alternates: { canonical: "/" },
   icons: {
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    images: [{ url: "/opengraph-image.png", alt: "Raymoriel Vandrell" }],
+    images: [{ url: "/opengraph-image.png", alt: "Zaymoriel Vandrell" }],
     url: "https://zaymoriel.com",
     type: "website",
   },
