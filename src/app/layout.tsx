@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Cascadia_Mono, STIX_Two_Text } from "next/font/google";
 import type { PropsWithChildren } from "react";
+import ThemeProvider from "~/components/theme/provider";
+import ThemeToggle from "~/components/theme/toggle";
+import { cn } from "~/lib/utils";
 import "~/styles/globals.css";
 
 const sans = STIX_Two_Text({
@@ -37,9 +40,16 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: PropsWithChildren) => {
   return (
-    <html lang="en" className={`${sans.variable} ${mono.variable} antialiased`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn(sans.variable, mono.variable)}
+    >
       <body>
-        <main className="container">{children}</main>
+        <ThemeProvider>
+          <ThemeToggle />
+          <main className="container">{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );
