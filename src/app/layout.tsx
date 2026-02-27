@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cascadia_Mono, STIX_Two_Text } from "next/font/google";
 import type { PropsWithChildren } from "react";
+import { SITE_URL } from "~/app/sitemap";
 import ThemeProvider from "~/components/theme/provider";
 import ThemeToggle from "~/components/theme/toggle";
 import { cn } from "~/lib/utils";
@@ -17,7 +18,7 @@ const mono = Cascadia_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://zaymoriel.com"),
+  metadataBase: new URL(SITE_URL),
   title: { default: "Zaymoriel Vandrell", template: "%s • Zaymoriel Vandrell" },
   description:
     "Essays on software architecture, production systems, performance, and the discipline of building durable software that survives real-world constraints.",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     images: [{ url: "/opengraph-image.png", alt: "Zaymoriel Vandrell" }],
-    url: "https://zaymoriel.com",
+    url: SITE_URL,
     type: "website",
   },
   twitter: { creator: "@zaymoriel" },
