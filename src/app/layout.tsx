@@ -19,7 +19,7 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: "Zaymoriel Vandrell", template: "%s • Zaymoriel Vandrell" },
+  title: { default: "Zaymoriel Vandrell", template: "%s · Zaymoriel Vandrell" },
   description:
     "Essays on software architecture, production systems, performance, and the discipline of building durable software that survives real-world constraints.",
   robots: { index: true, follow: true },

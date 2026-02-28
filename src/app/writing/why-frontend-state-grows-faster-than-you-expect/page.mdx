@@ -1,0 +1,77 @@
+export const metadata = {
+  title: "Why Frontend State Grows Faster Than You Expect",
+  description: "...",
+  alternates: {
+    canonical: "/writing/why-frontend-state-grows-faster-than-you-expect",
+  },
+};
+
+# Why Frontend State Grows Faster Than You Expect
+
+<div className="text-muted-foreground text-base">
+  <p>March 01, 2026 · 2 min read</p>
+</div>
+
+Frontend state rarely becomes complex all at once.
+
+It expands gradually. A component introduces local state. Another component depends on it. A server request enters the flow. Caching is added. Optimistic updates follow. What began as a UI concern becomes a coordination problem.
+
+State grows faster than expected not because of the number of variables, but because of the number of relationships between them.
+
+As those relationships multiply, ownership becomes harder to define.
+
+## State Is Layered
+
+In production systems, state exists simultaneously across layers:
+
+- UI state
+- Shared state
+- Server state
+- Cache state
+- Routing state
+- Temporal state
+
+Each layer is manageable in isolation. Complexity emerges when layers reference one another.
+
+A UI decision depends on shared state. Shared state derives from cached server data. Cached data is invalidated by user interaction. That interaction may depend on permissions defined elsewhere.
+
+State growth is relational, not additive.
+
+## Ownership Expands Before Code Looks Complex
+
+A value rarely has a single owner.
+
+Consider a filtered list. The filter may live in local state. It may sync to the URL. It may drive server queries. It may shape cache keys. It may trigger optimistic updates.
+
+The value remains small.
+
+Its ownership surface does not.
+
+Each additional owner introduces new rules:
+
+- When updates occur
+- Which layer is authoritative
+- How conflicts resolve
+- How transitions are reconciled
+
+Those rules introduce secondary states: loading, stale, optimistic, committed, error.
+
+The value does not multiply. The coordination around it does.
+
+## Time Multiplies Transitions
+
+Time introduces hidden transitions.
+
+A value may be fresh but unrendered. Rendered but stale. Optimistic but unconfirmed. Reconciled. Invalidated.
+
+State management becomes transition management.
+
+You are no longer storing values. You are coordinating change across layers.
+
+## Architectural Perspective
+
+Frontend state grows faster than expected because relationships expand before boundaries are clarified.
+
+If ownership, mutation, derivation, and invalidation are not explicit, complexity already exceeds the mental model.
+
+Architecture begins when ownership becomes visible.

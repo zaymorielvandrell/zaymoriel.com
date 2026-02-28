@@ -41,7 +41,7 @@ const components: MDXComponents = {
   ),
   a: ({ href, ...props }: ComponentPropsWithRef<"a">) => {
     const className =
-      "decoration-primary/80 hover:decoration-primary underline underline-offset-2 transition-all";
+      "decoration-primary/50 hover:decoration-primary underline underline-offset-2 transition-all";
 
     if (href?.startsWith("/")) {
       return <Link href={href} className={className} {...props} />;
