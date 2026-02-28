@@ -30,33 +30,42 @@ const components: MDXComponents = {
   p: (props: ComponentPropsWithRef<"p">) => (
     <p className="not-first:mt-4 leading-7" {...props} />
   ),
-  ol: (props: ComponentPropsWithRef<"ol">) => (
-    <ol className="space-y-2 not-first:mt-4 ml-6 list-decimal" {...props} />
-  ),
   ul: (props: ComponentPropsWithRef<"ul">) => (
-    <ul className="space-y-2 not-first:mt-4 ml-6 list-disc" {...props} />
+    <ul className="space-y-1 not-first:mt-4 ml-6 list-disc" {...props} />
   ),
-  a: ({ href = "", ...props }: ComponentPropsWithRef<"a">) => {
-    if (href.startsWith("/")) {
-      return (
-        <Link
-          href={href}
-          className="decoration-primary/80 hover:decoration-primary underline underline-offset-2 transition-all"
-          {...props}
-        />
-      );
+  ol: (props: ComponentPropsWithRef<"ol">) => (
+    <ol className="space-y-1 not-first:mt-4 ml-6 list-decimal" {...props} />
+  ),
+  li: (props: ComponentPropsWithRef<"li">) => (
+    <li className="leading-7" {...props} />
+  ),
+  a: ({ href, ...props }: ComponentPropsWithRef<"a">) => {
+    const className =
+      "decoration-primary/80 hover:decoration-primary underline underline-offset-2 transition-all";
+
+    if (href?.startsWith("/")) {
+      return <Link href={href} className={className} {...props} />;
     }
 
     return (
-      <Link
+      <a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="decoration-primary/80 hover:decoration-primary underline underline-offset-2 transition-all"
+        className={className}
         {...props}
       />
     );
   },
+  strong: (props: ComponentPropsWithRef<"strong">) => (
+    <strong className="font-medium" {...props} />
+  ),
+  code: (props: ComponentPropsWithRef<"code">) => (
+    <code
+      className="bg-muted px-1 py-0.5 rounded font-mono text-sm"
+      {...props}
+    />
+  ),
 };
 
 export const useMDXComponents = (): MDXComponents => {

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cascadia_Mono, STIX_Two_Text } from "next/font/google";
+import { JetBrains_Mono, STIX_Two_Text } from "next/font/google";
 import type { PropsWithChildren } from "react";
 import { SITE_URL } from "~/app/sitemap";
 import ThemeProvider from "~/components/theme/provider";
@@ -12,7 +12,7 @@ const sans = STIX_Two_Text({
   subsets: ["latin"],
 });
 
-const mono = Cascadia_Mono({
+const mono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
 });
