@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: "Zaymoriel Vandrell", template: "%s · Zaymoriel Vandrell" },
   description:
-    "Essays on software architecture, production systems, performance, and the discipline of building durable software that survives real-world constraints.",
+    "Essays on software architecture, performance, and production systems.",
   robots: { index: true, follow: true },
   alternates: { canonical: "/" },
   icons: {

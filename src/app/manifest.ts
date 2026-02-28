@@ -5,7 +5,7 @@ const manifest = (): MetadataRoute.Manifest => {
     name: "Zaymoriel Vandrell",
     short_name: "ZV",
     description:
-      "Essays on software architecture, production systems, performance, and the discipline of building durable software that survives real-world constraints.",
+      "Essays on software architecture, performance, and production systems.",
     icons: [
       {
         src: "/android-chrome-192x192.png",
