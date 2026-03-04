@@ -1,0 +1,70 @@
+export const metadata = {
+  title: "Components Don't Own State — Systems Do",
+  description:
+    "Why state ownership in production apps belongs to system coordination layers, not individual UI components.",
+  alternates: {
+    canonical: "/writing/components-dont-own-state-systems-do",
+  },
+};
+
+# Components Don't Own State — Systems Do
+
+<div className="mt-1 text-base text-muted-foreground">
+  <p>March 05, 2026 · 2 min read</p>
+</div>
+
+As state relationships multiply, the illusion of component ownership begins to collapse.
+
+In small applications, components appear to own state. They declare it, update it, and render from it.
+
+In production systems, that ownership rarely holds.
+
+## Local State Is Only the Entry Point
+
+A modal controls visibility. An input tracks its value. A dropdown stores a selection.
+
+The moment persistence, synchronization, or cross-boundary influence is required, the value stops being local.
+
+The component may store the value.
+
+The system governs it.
+
+## Ownership Is Authority
+
+Ownership is not about where a value lives in memory.
+
+Ownership is about who defines correctness, mutation rules, invalidation rules, and authoritative resolution.
+
+A form may hold input locally. The server determines validity. The cache determines freshness. The router determines whether the form can render at all.
+
+Authority is fragmented across layers.
+
+## Shared State Is Coordination
+
+Once state becomes shared, it becomes systemic.
+
+A filter value may:
+
+- Live locally
+- Sync to the URL
+- Drive server queries
+- Influence cache keys
+- Trigger optimistic UI
+
+The component participates in these transitions.
+
+The system coordinates them.
+
+Ownership shifts from component boundaries to coordination boundaries.
+
+## Architectural Perspective
+
+The architectural boundary is not the component boundary.
+
+It is the ownership boundary.
+
+Systems coordinate state.
+
+Components render state.
+
+When ownership is implicit, coordination spreads silently. When ownership is explicit, complexity becomes visible.
