@@ -1,6 +1,7 @@
 import type { MDXComponents } from "mdx/types";
 import Link from "next/link";
 import type { ComponentPropsWithRef } from "react";
+import { cn } from "~/lib/utils";
 
 const components: MDXComponents = {
   h1: (props: ComponentPropsWithRef<"h1">) => (
@@ -40,8 +41,9 @@ const components: MDXComponents = {
     <li className="leading-7" {...props} />
   ),
   a: ({ href, ...props }: ComponentPropsWithRef<"a">) => {
-    const className =
-      "decoration-primary/50 hover:decoration-primary underline underline-offset-2 transition-all";
+    const className = cn(
+      "underline decoration-primary/50 underline-offset-2 transition-all hover:decoration-primary"
+    );
 
     if (href?.startsWith("/")) {
       return <Link href={href} className={className} {...props} />;
