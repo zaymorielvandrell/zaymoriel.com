@@ -31,10 +31,10 @@ const components: MDXComponents = {
     <p className="not-first:mt-4 leading-7" {...props} />
   ),
   ul: (props: ComponentPropsWithRef<"ul">) => (
-    <ul className="space-y-1 not-first:mt-4 ml-6 list-disc" {...props} />
+    <ul className="not-first:mt-4 ml-6 list-disc" {...props} />
   ),
   ol: (props: ComponentPropsWithRef<"ol">) => (
-    <ol className="space-y-1 not-first:mt-4 ml-6 list-decimal" {...props} />
+    <ol className="not-first:mt-4 ml-6 list-decimal" {...props} />
   ),
   li: (props: ComponentPropsWithRef<"li">) => (
     <li className="leading-7" {...props} />
