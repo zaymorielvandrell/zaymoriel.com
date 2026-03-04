@@ -5,36 +5,36 @@ import type { ComponentPropsWithRef } from "react";
 const components: MDXComponents = {
   h1: (props: ComponentPropsWithRef<"h1">) => (
     <h1
-      className="not-first:mt-6 font-semibold text-3xl tracking-tight"
+      className="text-3xl font-semibold tracking-tight not-first:mt-6"
       {...props}
     />
   ),
   h2: (props: ComponentPropsWithRef<"h2">) => (
     <h2
-      className="not-first:mt-6 font-semibold text-2xl tracking-tight"
+      className="text-2xl font-semibold tracking-tight not-first:mt-6"
       {...props}
     />
   ),
   h3: (props: ComponentPropsWithRef<"h3">) => (
     <h3
-      className="not-first:mt-6 font-semibold text-xl tracking-tight"
+      className="text-xl font-semibold tracking-tight not-first:mt-6"
       {...props}
     />
   ),
   h4: (props: ComponentPropsWithRef<"h4">) => (
     <h4
-      className="not-first:mt-6 font-semibold text-lg tracking-tight"
+      className="text-lg font-semibold tracking-tight not-first:mt-6"
       {...props}
     />
   ),
   p: (props: ComponentPropsWithRef<"p">) => (
-    <p className="not-first:mt-4 leading-7" {...props} />
+    <p className="leading-7 not-first:mt-4" {...props} />
   ),
   ul: (props: ComponentPropsWithRef<"ul">) => (
-    <ul className="not-first:mt-4 ml-6 list-disc" {...props} />
+    <ul className="ml-6 list-disc not-first:mt-4" {...props} />
   ),
   ol: (props: ComponentPropsWithRef<"ol">) => (
-    <ol className="not-first:mt-4 ml-6 list-decimal" {...props} />
+    <ol className="ml-6 list-decimal not-first:mt-4" {...props} />
   ),
   li: (props: ComponentPropsWithRef<"li">) => (
     <li className="leading-7" {...props} />
@@ -62,10 +62,10 @@ const components: MDXComponents = {
   ),
   code: (props: ComponentPropsWithRef<"code">) => (
     <code
-      className="bg-muted px-1 py-0.5 rounded font-mono text-sm"
+      className="rounded bg-muted px-1 py-0.5 font-mono text-sm"
       {...props}
     />
-  ),
+  )
 };
 
 export const useMDXComponents = (): MDXComponents => {

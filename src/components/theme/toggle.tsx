@@ -12,10 +12,10 @@ const ThemeToggle = () => {
   };
 
   return (
-    <div className="top-4 right-4 fixed">
+    <div className="fixed top-4 right-4">
       <Button variant="outline" size="icon" onClick={toggleTheme}>
-        <SunIcon className="rotate-0 dark:-rotate-90 scale-100 dark:scale-0 transition-all" />
-        <MoonIcon className="absolute rotate-90 dark:rotate-0 scale-0 dark:scale-100 transition-all" />
+        <SunIcon className="scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+        <MoonIcon className="absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
         <span className="sr-only">Toggle Theme</span>
       </Button>
     </div>

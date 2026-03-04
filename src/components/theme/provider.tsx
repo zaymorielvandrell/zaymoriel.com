@@ -13,8 +13,7 @@ const ThemeProvider = ({
       disableTransitionOnChange
       defaultTheme="system"
       attribute="class"
-      {...props}
-    >
+      {...props}>
       {children}
     </NextThemesProvider>
   );

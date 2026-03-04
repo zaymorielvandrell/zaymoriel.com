@@ -9,12 +9,12 @@ import "~/styles/globals.css";
 
 const sans = STIX_Two_Text({
   variable: "--font-sans",
-  subsets: ["latin"],
+  subsets: ["latin"]
 });
 
 const mono = JetBrains_Mono({
   variable: "--font-mono",
-  subsets: ["latin"],
+  subsets: ["latin"]
 });
 
 export const metadata: Metadata = {
@@ -28,16 +28,16 @@ export const metadata: Metadata = {
     icon: [
       { url: "/favicon-16x16.png" },
       { url: "/favicon-32x32.png" },
-      { url: "/favicon.ico" },
+      { url: "/favicon.ico" }
     ],
-    apple: "/apple-touch-icon.png",
+    apple: "/apple-touch-icon.png"
   },
   openGraph: {
     images: [{ url: "/opengraph-image.png", alt: "Zaymoriel Vandrell" }],
     url: SITE_URL,
-    type: "website",
+    type: "website"
   },
-  twitter: { creator: "@zaymoriel" },
+  twitter: { creator: "@zaymoriel" }
 };
 
 const RootLayout = ({ children }: PropsWithChildren) => {
@@ -45,8 +45,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn(sans.variable, mono.variable)}
-    >
+      className={cn(sans.variable, mono.variable)}>
       <body>
         <ThemeProvider>
           <ThemeToggle />
