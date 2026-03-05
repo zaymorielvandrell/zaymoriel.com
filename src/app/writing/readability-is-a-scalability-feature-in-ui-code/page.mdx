@@ -1,0 +1,63 @@
+export const metadata = {
+  title: "Readability Is a Scalability Feature in UI Code",
+  description:
+    "Readability in UI code keeps ownership, state changes, and scale clear under pressure.",
+  alternates: {
+    canonical: "/writing/readability-is-a-scalability-feature-in-ui-code"
+  }
+};
+
+# Readability Is a Scalability Feature in UI Code
+
+<div className="mt-1 text-base text-muted-foreground">
+  <p>March 06, 2026 · 2 min read</p>
+</div>
+
+When ownership fragments across layers, comprehension becomes the next constraint.
+
+Readability is not aesthetic preference. It is an operational requirement.
+
+As state relationships expand, the system becomes harder to reason about under pressure.
+
+## Misreads Create Drift
+
+Frontend failures often emerge from incorrect assumptions rather than broken syntax.
+
+A mutation works only when requests resolve in a specific order. A cache update behaves correctly only under linear navigation. A feature works except during mid-transition.
+
+These failures arise from misread coordination.
+
+At scale, readability prevents assumption drift.
+
+## Readability Makes Ownership Visible
+
+You should be able to answer immediately:
+
+- Who owns this value
+- Who mutates it
+- What invalidates it
+- What depends on it
+
+If the code does not communicate these boundaries, coordination shifts into memory instead of structure.
+
+That does not scale.
+
+## The Codebase Is a Human Runtime
+
+A frontend system executes in the browser.
+
+It also executes in engineers' heads.
+
+Each new feature introduces additional state relationships. Scalability requires that humans can trace those relationships without reconstructing the system from scratch.
+
+Readability preserves structural visibility.
+
+## Architectural Perspective
+
+Readable systems scale because they explain ownership, mutation, invalidation, and transitions explicitly.
+
+Without readability, ownership boundaries collapse into ambiguity.
+
+Ambiguity multiplies risk.
+
+Readability is infrastructure.
