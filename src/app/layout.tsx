@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, STIX_Two_Text } from "next/font/google";
-import type { PropsWithChildren } from "react";
+import * as React from "react";
 import { SITE_URL } from "~/app/sitemap";
 import ThemeProvider from "~/components/theme/provider";
 import ThemeToggle from "~/components/theme/toggle";
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   twitter: { creator: "@zaymoriel" }
 };
 
-const RootLayout = ({ children }: PropsWithChildren) => {
+const RootLayout = ({ children }: React.PropsWithChildren) => {
   return (
     <html
       lang="en"
