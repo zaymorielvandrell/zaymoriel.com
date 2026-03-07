@@ -1,0 +1,72 @@
+export const metadata = {
+  title: "A Frontend Application Is a Distributed System",
+  description:
+    "Frontend apps are distributed; authority fragments, latency stays, failures partials.",
+  alternates: {
+    canonical: "/writing/a-frontend-application-is-a-distributed-system"
+  }
+};
+
+# A Frontend Application Is a Distributed System
+
+<div className="mt-1 text-base text-muted-foreground">
+  <p>March 08, 2026 · 2 min read</p>
+</div>
+
+Once authority fragments and timing becomes uncertain, the frontend behaves like a distributed system.
+
+A frontend application does not operate in a single, centralized context.
+
+It depends on servers, networks, caches, user input, and asynchronous timing.
+
+## Authority Is Fragmented
+
+In production UI systems:
+
+- The server defines persistent data
+- The client cache defines visible data
+- The UI defines temporary interaction state
+- The network defines delivery timing
+- The user defines intent
+
+No single layer controls the full lifecycle of a value.
+
+Authority is distributed.
+
+## Latency Is Structural
+
+Mutations trigger requests. Requests may succeed, fail, retry, or race with one another. The UI may optimistically update before confirmation. A background refetch may reconcile or override the optimistic value.
+
+These behaviors are not edge cases.
+
+They are properties of distributed systems.
+
+## Consistency Is Reconciled
+
+Multiple versions of a value may exist simultaneously across layers.
+
+Reconciliation rules determine which version becomes authoritative.
+
+Those rules span the UI, the cache, and the server.
+
+Consistency is negotiated.
+
+## Failure Is Partial
+
+Distributed systems rarely fail entirely.
+
+They degrade.
+
+A request may fail while the UI remains interactive. A cache may become stale while rendering continues. A websocket may disconnect silently.
+
+Frontend architecture must assume partial disagreement between layers at any moment.
+
+## Architectural Perspective
+
+Frontend complexity is not accidental.
+
+It emerges from fragmented ownership across distributed layers.
+
+What begins as local state becomes distributed coordination.
+
+Architecture is the discipline of making that coordination explicit.
